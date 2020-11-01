@@ -15,7 +15,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import saveLoadPackage.LocalStringFileReader;
 
 /**
  *
@@ -30,26 +29,12 @@ public class Main {
      */
     public static void main(String[] args) {
 
-        // TODO code application logic here
-
-        /*   String target="C:\\Universidad\\semestre 7\\"
-                    + "teoria\\writerreader\\mytest.txt";
-        LocalStringFileReader reader= new LocalStringFileReader();
-        System.out.println(reader.read(target));*/
- /*  int a9893479843=9;
-     long  ñ;
-     ñ  =   0   ;
-     float c=(float) 0.1;           
-     char b='d';*/
-        //automata("1",0);
+      
         String s = getCode("C:\\Universidad\\semestre7\\teoria\\automatas\\b.csv");
         guardarTexto("C:\\Universidad\\semestre7\\teoria\\automatas\\b.txt", s);
-        char a = 'a';
-        String av = String.valueOf(a);
+      
 
-        System.out.println(av);
-        String secuencia = "001";
-        String estadoActual = "UP";
+      
 
     }
 
