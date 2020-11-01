@@ -106,10 +106,15 @@ public class Main {
                 linea = bufferLectura.readLine();
                 j++;
             }
-            lleva += "  if(estadoActual.equalsIgnoreCase(\"ERROR\") || estadoActual.equalsIgnoreCase(\"ERRORC\")){\n"
-                    + "            mensaje += \"\\n\" + getErrorMistake(estadoPrevioError,String.valueOf(a), linea, n, secuencia);\n"
-                    + "           }"
-                    + "  \n}";
+            lleva += "if (estadoActual.equalsIgnoreCase(\"ERROR\") || estadoActual.equalsIgnoreCase(\"ERRORC\")) {\n" +
+"            mensaje += \"\\n\" + getErrorMistake(estadoPrevioError, String.valueOf(a), linea, n, secuencia);\n" +
+"        }\n" +
+"        String[] result = new String[2];\n" +
+"        result[0] = estadoActual;\n" +
+"        result[1] = mensaje;\n" +
+"        message.setMensaje(result);\n" +
+"\n" +
+"        return message;";
 
         } catch (FileNotFoundException ex) {
             Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
@@ -247,9 +252,14 @@ public class Main {
         System.out.println(entrada);
         if (inicioE) {
 
-            ss = " for (char a : secuencia.toCharArray()) {\n " + "estadoPrevioError=estadoActual;\n"
-                    + "n++;\n";
-                     ss += "if(estadoActual.equals(\"" + estado + "\")){";
+            ss = " c = listar(c, estadoActual, a);\n" +
+"\n" +
+"        ModelMessagePackage message = new ModelMessagePackage();\n" +
+"        message.setC(c);\n" +
+"\n" +
+"        String mensaje = \"\";\n" +
+"        String estadoPrevioError = estadoActual;\n" +
+"\n" + "if(estadoActual.equals(\"" + estado + "\")){";
 
         }
        else if (inicioS) {
